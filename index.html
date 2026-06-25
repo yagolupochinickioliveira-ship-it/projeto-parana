@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Virtual: Raízes Negras e a Identidade Paranaense</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .gallery-gradient {
+            background: linear-gradient(135deg, #121212 0%, #2a1b0a 100%);
+        }
+    </style>
+</head>
+<body class="gallery-gradient text-stone-100 font-sans min-h-screen flex flex-col">
 
+    <header class="border-b border-amber-900/40 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-center sm:text-left">
+                <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold">Exposição Virtual</span>
+                <h1 class="text-2xl font-serif font-bold text-amber-100">Raízes Negras & Identidade Paranaense</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-stone-400">
+                <a href="#sobre" class="hover:text-amber-400 transition">Sobre o Projeto</a>
+                <a href="#exposicao" class="text-amber-400 border-b-2 border-amber-500 pb-1">Galeria Interativa</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-6 py-12">
+        <section id="sobre" class="mb-16 text-center max-w-3xl mx-auto">
+            <h2 class="text-4xl font-serif mb-6 text-amber-200">A Linha da Terra: Da Argila ao Grafismo</h2>
+            <p class="text-stone-300 leading-relaxed text-lg">
+                Conectando o litoral de Paranaguá e os campos de Castro à ancestralidade do Norte. Descubra como o trabalho na erva-mate, a resistência dos quilombos paranaenses e a estética da argila dialogam com a iconografia marajoara e tapajônica. Uma história gravada na arte de povos tradicionais.
+            </p>
+        </section>
+
+        <section id="exposicao" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-black/30 p-6 rounded-2xl border border-amber-950/50">
+            
+            <div class="lg:col-span-4 flex flex-col gap-3">
+                <h3 class="text-xs uppercase tracking-widest text-amber-600 font-bold px-3 mb-2">Selecione uma Sala</h3>
+                
+                <button onclick="mudarSala('sala1')" id="btn-sala1" class="sala-btn w-full text-left p-4 rounded-xl bg-amber-950/40 border-l-4 border-amber-500 text-stone-100 transition duration-300">
+                    <span class="block text-xs text-amber-500 uppercase">Sala 01</span>
+                    <strong class="font-serif text-base">Litoral & Ciclos Econômicos</strong>
+                </button>
+
+                <button onclick="mudarSala('sala2')" id="btn-sala2" class="sala-btn w-full text-left p-4 rounded-xl bg-stone-900/40 border-l-4 border-transparent text-stone-400 hover:bg-stone-800/50 hover:text-stone-200 transition duration-300">
+                    <span class="block text-xs uppercase">Sala 02</span>
+                    <strong class="font-serif text-base">Castro & O Quilombo Marujá</strong>
+                </button>
+
+                <button onclick="mudarSala('sala3')" id="btn-sala3" class="sala-btn w-full text-left p-4 rounded-xl bg-stone-900/40 border-l-4 border-transparent text-stone-400 hover:bg-stone-800/50 hover:text-stone-200 transition duration-300">
+                    <span class="block text-xs uppercase">Sala 03</span>
+                    <strong class="font-serif text-base">Conexão Estética: PR & PA</strong>
+                </button>
+            </div>
+
+            <div class="lg:col-span-8 bg-stone-900/60 p-6 sm:p-8 rounded-xl border border-stone-800 min-h-[400px] flex flex-col justify-between">
+                
+                <div id="sala1" class="sala-conteudo flex flex-col gap-6">
+                    <div>
+                        <span class="text-xs text-amber-500 uppercase tracking-wider font-semibold">Paranaguá e a Força de Trabalho</span>
+                        <h4 class="text-2xl font-serif text-amber-100 mt-1">O Litoral e os Ciclos do Mate e Açúcar</h4>
+                    </div>
+                    <div class="w-full h-48 bg-stone-800 rounded-lg flex items-center justify-center border border-stone-700 text-stone-500 text-sm italic">
+                        [Espaço para Imagem de Paranaguá Antiga ou Engenho de Mate]
+                    </div>
+                    <p class="text-stone-300 leading-relaxed">
+                        O porto de Paranaguá foi a porta de entrada e escoamento da riqueza paranaense, erguido e sustentado pela força do trabalho negro escravizado. Nos engenhos de açúcar do litoral e na complexa colheita e processamento da erva-mate, a tecnologia e o conhecimento africano transformaram a economia da província, deixando marcas profundas na cultura caiçara e afro-litorânea.
+                    </p>
+                </div>
+
+                <div id="sala2" class="sala-conteudo hidden flex flex-col gap-6">
+                    <div>
+                        <span class="text-xs text-amber-500 uppercase tracking-wider font-semibold">Resistência nos Campos Gerais</span>
+                        <h4 class="text-2xl font-serif text-amber-100 mt-1">Castro e o Quilombo Sete Marujás</h4>
+                    </div>
+                    <div class="w-full h-48 bg-stone-800 rounded-lg flex items-center justify-center border border-stone-700 text-stone-500 text-sm italic">
+                        [Espaço para Foto da Comunidade ou Instrumentos de Resistência]
+                    </div>
+                    <p class="text-stone-300 leading-relaxed">
+                        No coração da região de Castro, a comunidade quilombola de Santa Cruz dos Marujás (ou Sete Marujás) representa a permanência viva, a posse da terra e a preservação de tradições singulares. A resistência aqui não foi apenas física, mas cultural, mantendo viva a musicalidade, a agricultura tradicional e a relação sagrada com o território.
+                    </p>
+                </div>
+
+                <div id="sala3" class="sala-conteudo hidden flex flex-col gap-6">
+                    <div>
+                        <span class="text-xs text-amber-500 uppercase tracking-wider font-semibold">Diálogo de Grafismos e Argila</span>
+                        <h4 class="text-2xl font-serif text-amber-100 mt-1">Do Paraná ao Pará: Estéticas Ancestrais</h4>
+                    </div>
+                    <div class="w-full h-48 bg-stone-800 rounded-lg flex items-center justify-center border border-stone-700 text-stone-500 text-sm italic">
+                        [Espaço para Objeto 3D Interativo / Paralelo entre Grafismos]
+                    </div>
+                    <p class="text-stone-300 leading-relaxed">
+                        A beleza do artesanato de resistência quilombola paranaense encontra uma ponte poética com a iconografia marajoara e tapajônica do Pará. O uso da argila e dos padrões geométricos (grafismos) transcende fronteiras geográficas: são códigos visuais de povos tradicionais que usam a terra e o traço como ferramentas de preservação histórica, identidade e narrativa de mundo.
+                    </p>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-stone-800 flex justify-between items-center text-xs text-stone-500">
+                    <span>Use o menu ao lado para navegar pelas salas.</span>
+                    <span class="text-amber-600/80 font-mono">Acervo Digital v1.0</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/80 text-stone-500 text-xs py-6 text-center border-t border-stone-900">
+        <p>&copy; 2026 Museu Virtual Raízes Negras. Desenvolvido para a preservação da memória afro-paranaense.</p>
+    </footer>
+
+    <script>
+        function mudarSala(salaId) {
+            // Esconde todas as salas de conteúdo
+            const salas = document.querySelectorAll('.sala-conteudo');
+            salas.forEach(sala => sala.classList.add('hidden'));
+
+            // Mostra a sala selecionada
+            document.getElementById(salaId).classList.remove('hidden');
+
+            // Atualiza o estilo visual dos botões laterais
+            const botoes = document.querySelectorAll('.sala-btn');
+            botoes.forEach(btn => {
+                btn.classList.remove('bg-amber-950/40', 'border-amber-500', 'text-stone-100');
+                btn.classList.add('bg-stone-900/40', 'border-transparent', 'text-stone-400');
+            });
+
+            // Destaca o botão ativo
+            const botaoAtivo = document.getElementById('btn-' + salaId);
+            botaoAtivo.classList.remove('bg-stone-900/40', 'border-transparent', 'text-stone-400');
+            botaoAtivo.classList.add('bg-amber-950/40', 'border-amber-500', 'text-stone-100');
+        }
+    </script>
+</body>
+</html>
